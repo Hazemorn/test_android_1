@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             var temp = tempValue.lowercase()
             Log.d("Log_exMAct", "Input name is $tempValue, $temp")
             bindingClass.res.visibility = View.VISIBLE
-
+            /*
             if (temp == "linda"){
                 bindingClass.res.text =" Hi, $tempValue! Your salary is 2000$"
             }else if(temp == "miha"){
@@ -35,7 +35,16 @@ class MainActivity : AppCompatActivity() {
                  bindingClass.res.text ="Hi, $tempValue! Your salary 1700$"
             }else{
                 bindingClass.res.text=" Hi, $tempValue, no data about you"
+            }*/
+            when(temp){
+                "linda"-> bindingClass.res.text = "Hi, $tempValue! Your salary is 2000$"
+
+                "miha"-> bindingClass.res.text ="Hi, $tempValue! Your salary is 2000$"
+
+                "lara"-> bindingClass.res.text ="Hi, $tempValue! Your salary is 2000$"
+                else -> bindingClass.res.text ="Hi, $tempValue , mo data about you"
             }
+
         }
 
     }
