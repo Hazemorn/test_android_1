@@ -3,6 +3,7 @@ package com.example.learn
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.provider.ContactsContract.Directory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -36,16 +37,36 @@ class MainActivity : AppCompatActivity() {
             }else{
                 bindingClass.res.text=" Hi, $tempValue, no data about you"
             }*/
+            var tempSal =""
             when(temp){
-                "linda"-> bindingClass.res.text = "Hi, $tempValue! Your salary is 2000$"
+                Constant.Manager-> {
+                    tempSal ="Hi, $tempValue! Your salary is ${Constant.Manager_Salary}"
+                    bindingClass.res.text = tempSal
+                }
 
-                "miha"-> bindingClass.res.text ="Hi, $tempValue! Your salary is 2000$"
+                Constant.Director->{
+                    tempSal = "Hi, $tempValue! Your salary is ${Constant.Director_Salary}"
+                    bindingClass.res.text = tempSal
+                }
 
-                "lara"-> bindingClass.res.text ="Hi, $tempValue! Your salary is 2000$"
+                Constant.Sup-> {
+                    tempSal = "Hi, $tempValue! Your salary is ${Constant.Sup_Salary}"
+                    bindingClass.res.text = tempSal
+                }
                 else -> bindingClass.res.text ="Hi, $tempValue , mo data about you"
             }
 
         }
+
+    }
+    object Constant{
+        const val Director_Salary = 2000
+        const val Manager_Salary =2100
+        const val Sup_Salary =1700
+
+        const val Director = "miha"
+        const val Manager = "linda"
+        const val Sup = "lara"
 
     }
 
