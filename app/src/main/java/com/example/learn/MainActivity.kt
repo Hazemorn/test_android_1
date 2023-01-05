@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         bindingClass.enter.setOnClickListener {
 
             val tempValue = bindingClass.data.text.toString()
-            var temp = tempValue.lowercase()
+            var temp = tempValue.lowercase().trim()
             Log.d("Log_exMAct", "Input name is $tempValue, $temp")
             bindingClass.res.visibility = View.VISIBLE
             /*
