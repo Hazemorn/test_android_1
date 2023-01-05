@@ -11,5 +11,4 @@ object Constant {
         const val Sup = "lara"
 
 
-
 }

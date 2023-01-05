@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.learn.databinding.ActivityMainBinding
 import org.w3c.dom.Text
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -40,17 +41,20 @@ class MainActivity : AppCompatActivity() {
             var tempSal =""
             when(temp){
                 Constant.Manager-> {
-                    tempSal ="Hi, $tempValue! Your salary is ${Constant.Manager_Salary}"
+
+                    tempSal ="Hi, ${tempValue.trim().lowercase().replaceFirstChar { if(it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Manager_Salary}"
                     bindingClass.res.text = tempSal
                 }
 
                 Constant.Director->{
-                    tempSal = "Hi, $tempValue! Your salary is ${Constant.Director_Salary}"
+                    tempSal = "Hi, ${tempValue.trim().lowercase().replaceFirstChar { if(it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Director_Salary}"
                     bindingClass.res.text = tempSal
                 }
 
                 Constant.Sup-> {
-                    tempSal = "Hi, $tempValue! Your salary is ${Constant.Sup_Salary}"
+
+                    tempSal = "Hi, ${tempValue.trim().lowercase()
+                        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Sup_Salary}"
                     bindingClass.res.text = tempSal
                 }
                 else -> bindingClass.res.text ="Hi, $tempValue , mo data about you"
