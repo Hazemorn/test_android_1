@@ -2,15 +2,9 @@ package com.example.learn
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.provider.ContactsContract.Directory
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import com.example.learn.databinding.ActivityMainBinding
-import org.w3c.dom.Text
 import java.util.*
 
 
@@ -25,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         bindingClass.enter.setOnClickListener {
 
             val tempValue = bindingClass.data.text.toString()
-            var temp = tempValue.lowercase().trim()
+            val temp = tempValue.lowercase().trim()
             Log.d("Log_exMAct", "Input name is $tempValue, $temp")
             bindingClass.res.visibility = View.VISIBLE
             /*
@@ -50,16 +44,15 @@ class MainActivity : AppCompatActivity() {
                     tempSal = "Hi, ${tempValue.trim().lowercase().replaceFirstChar { if(it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Director_Salary}"
                     bindingClass.res.text = tempSal
                 }
-
                 Constant.Sup-> {
 
                     tempSal = "Hi, ${tempValue.trim().lowercase()
                         .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Sup_Salary}"
                     bindingClass.res.text = tempSal
                 }
-                else -> bindingClass.res.text ="Hi, $tempValue , mo data about you"
-            }
-
+                else -> bindingClass.res.text ="Hi, ${tempValue.trim().lowercase()
+                        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }} , mo data about you"
+                }
         }
 
     }
