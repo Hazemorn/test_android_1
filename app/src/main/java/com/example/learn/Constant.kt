@@ -10,5 +10,7 @@ object Constant {
         const val Manager = "linda"
         const val Sup = "lara"
 
-
+        const val PasswDir = "1789"
+        const val PasswMan = "5690"
+        const val PasswSup = "7219"
 }

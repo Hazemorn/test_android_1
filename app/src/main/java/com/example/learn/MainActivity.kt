@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             val tempValue = bindingClass.data.text.toString()
             val temp = tempValue.lowercase().trim()
             Log.d("Log_exMAct", "Input name is $tempValue, $temp")
-            bindingClass.res.visibility = View.VISIBLE
+
             /*
             if (temp == "linda"){
                 bindingClass.res.text =" Hi, $tempValue! Your salary is 2000$"
@@ -32,27 +32,60 @@ class MainActivity : AppCompatActivity() {
             }else{
                 bindingClass.res.text=" Hi, $tempValue, no data about you"
             }*/
+            bindingClass.res.visibility = View.VISIBLE
             var tempSal =""
             when(temp){
                 Constant.Manager-> {
-
-                    tempSal ="Hi, ${tempValue.trim().lowercase().replaceFirstChar { if(it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Manager_Salary}"
-                    bindingClass.res.text = tempSal
+                        if(bindingClass.passW.text.toString() == Constant.PasswMan) {
+                            tempSal = "Hi, ${
+                                tempValue.trim().lowercase()
+                                    .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
+                            }! Your salary is ${Constant.Manager_Salary}"
+                            bindingClass.res.text = tempSal
+                            bindingClass.resPhoto.visibility = View.VISIBLE
+                            bindingClass.resPhoto.setImageResource(R.drawable.done)
+                        }else{
+                            bindingClass.res.text = "Wrong password"
+                            bindingClass.resPhoto.visibility = View.VISIBLE
+                            bindingClass.resPhoto.setImageResource(R.drawable.wrong)
+                        }
                 }
 
                 Constant.Director->{
-                    tempSal = "Hi, ${tempValue.trim().lowercase().replaceFirstChar { if(it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Director_Salary}"
-                    bindingClass.res.text = tempSal
+                    if(bindingClass.passW.text.toString() == Constant.PasswDir) {
+                        tempSal = "Hi, ${
+                            tempValue.trim().lowercase()
+                                .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
+                        }! Your salary is ${Constant.Director_Salary}"
+                        bindingClass.res.text = tempSal
+                        bindingClass.resPhoto.visibility = View.VISIBLE
+                        bindingClass.resPhoto.setImageResource(R.drawable.done)
+                    }else{
+                        bindingClass.res.text = "Wrong password"
+                        bindingClass.resPhoto.visibility = View.VISIBLE
+                        bindingClass.resPhoto.setImageResource(R.drawable.wrong)
+                    }
                 }
                 Constant.Sup-> {
-
-                    tempSal = "Hi, ${tempValue.trim().lowercase()
-                        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}! Your salary is ${Constant.Sup_Salary}"
-                    bindingClass.res.text = tempSal
+                    if(bindingClass.passW.text.toString() == Constant.PasswSup) {
+                        tempSal = "Hi, ${
+                            tempValue.trim().lowercase()
+                                .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
+                        }! Your salary is ${Constant.Sup_Salary}"
+                        bindingClass.res.text = tempSal
+                        bindingClass.resPhoto.visibility = View.VISIBLE
+                        bindingClass.resPhoto.setImageResource(R.drawable.done)
+                    }else{
+                        bindingClass.res.text = "Wrong password"
+                        bindingClass.resPhoto.visibility = View.VISIBLE
+                        bindingClass.resPhoto.setImageResource(R.drawable.wrong)
+                    }
                 }
-                else -> bindingClass.res.text ="Hi, ${tempValue.trim().lowercase()
+                else -> {bindingClass.res.text ="Hi, ${tempValue.trim().lowercase()
                         .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }} , mo data about you"
-                }
+                        bindingClass.resPhoto.visibility = View.VISIBLE
+                        bindingClass.resPhoto.setImageResource(R.drawable.error)
+                }}
         }
 
     }
