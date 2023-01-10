@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                             }! Your salary is ${Constant.Manager_Salary}"
                             bindingClass.res.text = tempSal
                             bindingClass.resPhoto.visibility = View.VISIBLE
-                            bindingClass.resPhoto.setImageResource(R.drawable.done)
+                            bindingClass.resPhoto.setImageResource(R.drawable.done_new)
                         }else{
                             bindingClass.res.text = "Wrong password"
                             bindingClass.resPhoto.visibility = View.VISIBLE
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                         }! Your salary is ${Constant.Director_Salary}"
                         bindingClass.res.text = tempSal
                         bindingClass.resPhoto.visibility = View.VISIBLE
-                        bindingClass.resPhoto.setImageResource(R.drawable.done)
+                        bindingClass.resPhoto.setImageResource(R.drawable.done_new)
                     }else{
                         bindingClass.res.text = "Wrong password"
                         bindingClass.resPhoto.visibility = View.VISIBLE
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                         }! Your salary is ${Constant.Sup_Salary}"
                         bindingClass.res.text = tempSal
                         bindingClass.resPhoto.visibility = View.VISIBLE
-                        bindingClass.resPhoto.setImageResource(R.drawable.done)
+                        bindingClass.resPhoto.setImageResource(R.drawable.done_new)
                     }else{
                         bindingClass.res.text = "Wrong password"
                         bindingClass.resPhoto.visibility = View.VISIBLE
